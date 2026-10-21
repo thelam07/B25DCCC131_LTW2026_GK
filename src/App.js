@@ -16,6 +16,13 @@ const App = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const saved = localStorage.getItem("gk_tasks");
+    if (saved) {
+      setTasks(JSON.parse(saved));
+      setLoading(false);
+      return;
+    }
+
     const controller = new AbortController();
     axios
       .get("/data/tasks.json", { signal: controller.signal })
@@ -30,6 +37,13 @@ const App = () => {
       });
     return () => controller.abort();
   }, []);
+
+  useEffect(() => {
+    if (!loading && !error) {
+      localStorage.setItem("gk_tasks", JSON.stringify(tasks));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tasks, loading]);
 
   const addTask = (task) => {
     const newId = tasks.reduce((max, { id }) => Math.max(max, id), 0) + 1;

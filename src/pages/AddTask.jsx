@@ -21,7 +21,12 @@ const AddTask = ({ onAdd }) => {
       setMessage("Vui lòng nhập đầy đủ thông tin");
       return;
     }
-    onAdd({ title: title.trim(), assignee: assignee.trim(), priority, hours: Number(hours) });
+    const hoursNumber = Number(hours);
+    if (!Number.isInteger(hoursNumber) || hoursNumber < 1 || hoursNumber > 40) {
+      setMessage("Số giờ phải từ 1 đến 40");
+      return;
+    }
+    onAdd({ title: title.trim(), assignee: assignee.trim(), priority, hours: hoursNumber });
     navigate("/tasks", { replace: true });
   };
 

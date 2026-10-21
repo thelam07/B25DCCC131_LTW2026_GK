@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import WorkTimer from "../components/WorkTimer";
 
 const TaskDetail = ({ tasks }) => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const TaskDetail = ({ tasks }) => {
       <p>{`Mức ưu tiên: ${priority}`}</p>
       <p>{`Số giờ: ${hours}`}</p>
       <p>{`Trạng thái: ${done ? "Đã xong" : "Đang làm"}`}</p>
+      <WorkTimer key={id} />
       {backButton}
     </div>
   );
