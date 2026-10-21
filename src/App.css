@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+body {
+  background: #eef3f8;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 24px;
+  background: #fff;
+  border-top: 4px solid #1976d2;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a {
+  color: #1976d2;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  color: red;
+  font-weight: bold;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  color: #1976d2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #1976d2;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f9fb;
+}
+
+tbody tr:hover {
+  background: #fff3cd;
+}
+
+td a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+td a.done {
+  color: #888;
+  text-decoration: line-through;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+td button:first-child {
+  background: #2e7d32;
+}
+
+td button:last-child {
+  background: #d32f2f;
+}
+
+input,
+select {
+  padding: 6px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #1976d2;
+}
+
+.form-row {
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  display: inline-block;
+  width: 140px;
+}
+
+.form-row input,
+.form-row select {
+  width: 220px;
+}
+
+.error {
+  color: red;
+}
+
+.build {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
 }
